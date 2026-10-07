@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anahís Filomena Prieto Romero | Asesora de Seguros</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts Inter & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                            950: '#172554',
+                        },
+                        gold: {
+                            400: '#facc15',
+                            500: '#eab308',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-nav {
+            background: rgba(30, 58, 138, 0.95);
+            backdrop-filter: blur(12px);
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, #172554 0%, #1e40af 60%, #2563eb 100%);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #60a5fa 0%, #ffffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .accent-gradient {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-600 selection:text-white">
+
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-nav text-white border-b border-brand-800/50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Brand Logo with SVG Icon -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 rounded-xl bg-white p-1.5 shadow-md flex items-center justify-center shrink-0 border border-brand-100 group-hover:scale-105 transition-transform">
+                    <svg viewBox="0 0 200 200" class="w-full h-full text-brand-700 fill-current">
+                        <!-- Blue Container Background -->
+                        <rect width="200" height="200" rx="20" fill="#1E40AF"/>
+                        
+                        <!-- Family Group (Parents and Child) -->
+                        <g fill="#FFFFFF">
+                            <!-- Parent Left (Woman) -->
+                            <circle cx="72" cy="55" r="12" />
+                            <path d="M58 75 C58 70, 86 70, 86 75 L82 110 L75 110 L75 135 L69 135 L69 110 L62 110 Z" />
+                            
+                            <!-- Parent Right (Man) -->
+                            <circle cx="102" cy="50" r="13" />
+                            <path d="M87 70 C87 65, 117 65, 117 70 L114 110 L106 110 L106 138 L98 138 L98 110 L90 110 Z" />
+                            
+                            <!-- Child Center-Right -->
+                            <circle cx="130" cy="72" r="9" />
+                            <path d="M120 86 C120 82, 140 82, 140 86 L137 115 L132 115 L132 135 L127 135 L127 115 L123 115 Z" />
+                        </g>
+                        
+                        <!-- Protective Open Hands -->
+                        <g fill="#FFFFFF">
+                            <!-- Left Hand -->
+                            <path d="M30 145 C 30 110, 65 100, 85 130 C 88 135, 82 140, 77 135 C 62 112, 45 125, 42 145 C 40 155, 60 172, 85 172 L 85 182 C 50 182, 30 165, 30 145 Z"/>
+                            <!-- Right Hand -->
+                            <path d="M170 145 C 170 110, 135 100, 115 130 C 112 135, 118 140, 123 135 C 138 112, 155 125, 158 145 C 160 155, 140 172, 115 172 L 115 182 C 150 182, 170 165, 170 145 Z"/>
+                        </g>
+                    </svg>
+                </div>
+                <div>
+                    <span class="font-heading text-lg font-bold tracking-tight block leading-tight text-white">Anahís Prieto</span>
+                    <span class="text-xs text-brand-200 font-medium tracking-wider uppercase">Asesora de Seguros</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-7 text-sm font-medium">
+                <a href="#inicio" class="hover:text-brand-200 transition-colors">Inicio</a>
+                <a href="#sobre-mi" class="hover:text-brand-200 transition-colors">Sobre Mí</a>
+                <a href="#servicios" class="hover:text-brand-200 transition-colors">Servicios</a>
+                <a href="#cotizador" class="hover:text-brand-200 transition-colors">Cotizador Express</a>
+                <a href="#redes" class="hover:text-brand-200 transition-colors">TikTok</a>
+                <a href="#contacto" class="hover:text-brand-200 transition-colors">Ubicación & Contacto</a>
+            </div>
+
+            <div class="hidden lg:flex items-center">
+                <a href="https://wa.me/?text=Hola%20Anah%C3%ADs,%20deseo%20recibir%20asesor%C3%ADa%20sobre%20un%20seguro" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-2.5 rounded-full font-medium transition-all shadow-md hover:shadow-emerald-900/50 flex items-center gap-2 text-sm">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Contactar por WhatsApp
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" class="md:hidden text-2xl focus:outline-none p-2 text-slate-200 hover:text-white">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-950 border-b border-brand-800 px-4 pt-2 pb-6 space-y-3 text-center">
+            <a href="#inicio" class="mobile-link block py-2 border-b border-brand-900 hover:text-brand-300">Inicio</a>
+            <a href="#sobre-mi" class="mobile-link block py-2 border-b border-brand-900 hover:text-brand-300">Sobre Mí</a>
+            <a href="#servicios" class="mobile-link block py-2 border-b border-brand-900 hover:text-brand-300">Servicios</a>
+            <a href="#cotizador" class="mobile-link block py-2 border-b border-brand-900 hover:text-brand-300">Cotizador Express</a>
+            <a href="#redes" class="mobile-link block py-2 border-b border-brand-900 hover:text-brand-300">TikTok</a>
+            <a href="#contacto" class="mobile-link block py-2 border-b border-brand-900 hover:text-brand-300">Contacto</a>
+            <a href="https://wa.me/?text=Hola%20Anah%C3%ADs,%20deseo%20recibir%20asesor%C3%ADa%20sobre%20un%20seguro" target="_blank" class="mobile-link inline-block mt-3 bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-2.5 rounded-full font-medium w-full">
+                <i class="fa-brands fa-whatsapp mr-1"></i> WhatsApp Directo
+            </a>
+        </div>
+    </nav>
+
+    <section id="inicio" class="pt-28 lg:pt-36 pb-20 hero-bg text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:20px_20px]"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-200 text-xs sm:text-sm font-medium">
+                        <i class="fa-solid fa-location-dot text-brand-300"></i>
+                        <span>Barquisimeto, Estado Lara • Venezuela</span>
+                    </div>
+
+                    <h1 class="font-heading text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
+                        Protegiendo lo que más amas con <span class="text-gradient">respaldo, ética y confianza.</span>
+                    </h1>
+
+                    <p class="text-blue-100 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                        Hola, soy **Anahís Filomena Prieto Romero**. Te brindo atención directa y asesoría especializada en seguros de salud, vida y patrimonio adaptados a ti y a tu familia.
+                    </p>
+
+                    <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#cotizador" class="w-full sm:w-auto bg-white text-brand-900 hover:bg-brand-50 px-8 py-4 rounded-xl font-bold shadow-xl transition-all transform hover:-translate-y-0.5 text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-calculator text-brand-700"></i> Cotizar Seguro Ahora
+                        </a>
+                        <a href="#contacto" class="w-full sm:w-auto bg-brand-800/80 hover:bg-brand-800 text-white border border-brand-500/40 px-8 py-4 rounded-xl font-semibold transition-all backdrop-blur-sm text-center flex items-center justify-center gap-2">
+                            <i class="fa-regular fa-calendar-check text-brand-300"></i> Agendar Consulta
+                        </a>
+                    </div>
+
+                    <!-- Highlight Badges -->
+                    <div class="pt-8 border-t border-brand-800/80 grid grid-cols-3 gap-4 text-center lg:text-left">
+                        <div>
+                            <p class="font-heading text-2xl sm:text-3xl font-bold text-white">100%</p>
+                            <p class="text-xs sm:text-sm text-blue-200">Atención Personalizada</p>
+                        </div>
+                        <div>
+                            <p class="font-heading text-2xl sm:text-3xl font-bold text-white">24/7</p>
+                            <p class="text-xs sm:text-sm text-blue-200">Asistencia Siniestros</p>
+                        </div>
+                        <div>
+                            <p class="font-heading text-2xl sm:text-3xl font-bold text-gold-400">Lara</p>
+                            <p class="text-xs sm:text-sm text-blue-200">Barquisimeto y Todo el País</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card with Graphic SVG & Adviser Profile -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-sm sm:max-w-md">
+                        <div class="absolute -inset-1.5 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-3xl blur opacity-30"></div>
+                        
+                        <div class="relative bg-brand-950 border border-brand-800 rounded-3xl p-6 shadow-2xl text-center space-y-6">
+                            
+                            <!-- Brand Big Logo Badge -->
+                            <div class="w-32 h-32 mx-auto rounded-2xl bg-white p-3 shadow-xl border-2 border-brand-200 flex items-center justify-center">
+                                <svg viewBox="0 0 200 200" class="w-full h-full text-brand-800 fill-current">
+                                    <rect width="200" height="200" rx="20" fill="#1E40AF"/>
+                                    <g fill="#FFFFFF">
+                                        <circle cx="72" cy="55" r="12" />
+                                        <path d="M58 75 C58 70, 86 70, 86 75 L82 110 L75 110 L75 135 L69 135 L69 110 L62 110 Z" />
+                                        <circle cx="102" cy="50" r="13" />
+                                        <path d="M87 70 C87 65, 117 65, 117 70 L114 110 L106 110 L106 138 L98 138 L98 110 L90 110 Z" />
+                                        <circle cx="130" cy="72" r="9" />
+                                        <path d="M120 86 C120 82, 140 82, 140 86 L137 115 L132 115 L132 135 L127 135 L127 115 L123 115 Z" />
+                                    </g>
+                                    <g fill="#FFFFFF">
+                                        <path d="M30 145 C 30 110, 65 100, 85 130 C 88 135, 82 140, 77 135 C 62 112, 45 125, 42 145 C 40 155, 60 172, 85 172 L 85 182 C 50 182, 30 165, 30 145 Z"/>
+                                        <path d="M170 145 C 170 110, 135 100, 115 130 C 112 135, 118 140, 123 135 C 138 112, 155 125, 158 145 C 160 155, 140 172, 115 172 L 115 182 C 150 182, 170 165, 170 145 Z"/>
+                                    </g>
+                                </svg>
+                            </div>
+
+                            <div>
+                                <h3 class="font-heading text-2xl font-bold text-white">Anahís Filomena Prieto R.</h3>
+                                <p class="text-brand-300 text-sm font-medium mt-1">Asesora Profesional de Seguros</p>
+                                <p class="text-xs text-slate-300 mt-2">Protección Patrimonial • Salud • Vida • Vehicular</p>
+                            </div>
+
+                            <div class="pt-4 border-t border-brand-800/80 space-y-2 text-left text-xs text-blue-200">
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-location-dot text-brand-400 w-4"></i>
+                                    <span>Urb. Yucatan II, Barquisimeto (Tamaca)</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-envelope text-brand-400 w-4"></i>
+                                    <span class="truncate">anahisfilomprieto@hotmail.com</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-brands fa-tiktok text-brand-400 w-4"></i>
+                                    <span>@anahis.prieto28</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre-mi" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="inline-block px-3 py-1 rounded-full bg-brand-50 text-brand-800 font-semibold text-xs uppercase tracking-wider">
+                        Tranquilidad & Compromiso
+                    </div>
+                    <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 leading-tight">
+                        Tu bienestar y el de tu familia son mi mayor prioridad
+                    </h2>
+                    <p class="text-slate-600 leading-relaxed">
+                        Como asesora de seguros especializada, mi objetivo es guiarte de forma totalmente clara, sincera y transparente para elegir las mejores opciones de protección ajustadas a tus posibilidades.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed">
+                        Ubicada en **Barquisimeto (Tamaca, Estado Lara)**, brindo asesoría personalizada tanto a familias como a emprendedores y empresas en todo el país. No solo gestiono tu póliza; estoy a tu lado en todo momento para responder dudas y respaldarte ante cualquier siniestro o emergencia.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-brand-600 text-white flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-shield-heart text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Protección Familiar</h4>
+                                <p class="text-xs text-slate-500 mt-0.5">Planes diseñados para resguardar la salud y el patrimonio familiar.</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-brand-600 text-white flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-hand-holding-hand text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Acompañamiento Directo</h4>
+                                <p class="text-xs text-slate-500 mt-0.5">Trato cercano sin intermediarios ni complicaciones.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Decorative Feature Card -->
+                <div class="lg:col-span-6 bg-brand-50 rounded-3xl p-8 border border-brand-100 shadow-sm relative">
+                    <div class="space-y-6">
+                        <h3 class="font-heading text-2xl font-bold text-brand-900">¿Por qué elegir la asesoría con Anahís Prieto?</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-brand-600 text-xl mt-0.5"></i>
+                                <div>
+                                    <h4 class="font-semibold text-slate-800 text-sm">Análisis de Necesidades Real</h4>
+                                    <p class="text-xs text-slate-600">Evaluamos exactamente qué coberturas necesitas sin sobrecostos innecesarios.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-brand-600 text-xl mt-0.5"></i>
+                                <div>
+                                    <h4 class="font-semibold text-slate-800 text-sm">Comparativa Transparente</h4>
+                                    <p class="text-xs text-slate-600">Revisamos las mejores opciones y condiciones de aseguradoras reconocidas.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-brand-600 text-xl mt-0.5"></i>
+                                <div>
+                                    <h4 class="font-semibold text-slate-800 text-sm">Respuesta en Siniestros</h4>
+                                    <p class="text-xs text-slate-600">Orientación inmediata durante reembolsos, cartas avales y emergencias.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t border-brand-200 flex items-center justify-between text-xs text-brand-800 font-medium">
+                            <span><i class="fa-solid fa-house-user mr-1"></i> Atención presencial en Lara</span>
+                            <span><i class="fa-solid fa-globe mr-1"></i> Asesoría Digital en todo el país</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" class="py-20 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-700 font-semibold text-xs uppercase tracking-wider block mb-2">Coberturas Principales</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900">Servicios de Asesoría Integral</h2>
+                <p class="text-slate-600 mt-3 text-sm sm:text-base">Selecciona un servicio para conocer más detalles sobre cada tipo de póliza.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Service 1: Salud -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-notes-medical"></i>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-2">Salud & Gastos Médicos</h3>
+                        <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                            Resguardo financiero ante consultas, emergencias, cirugías y hospitalización en clínicas especializadas.
+                        </p>
+                    </div>
+                    <button onclick="openModal('salud')" class="w-full py-2.5 px-4 rounded-xl border border-brand-200 text-brand-700 font-semibold text-sm hover:bg-brand-600 hover:text-white transition-colors flex items-center justify-center gap-2">
+                        Ver Detalles <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+                </div>
+
+                <!-- Service 2: Vida -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-people-roof"></i>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-2">Vida & Patrimonio Familiar</h3>
+                        <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                            Garantiza el futuro económico y la tranquilidad de tus seres queridos ante cualquier contingencia.
+                        </p>
+                    </div>
+                    <button onclick="openModal('vida')" class="w-full py-2.5 px-4 rounded-xl border border-brand-200 text-brand-700 font-semibold text-sm hover:bg-brand-600 hover:text-white transition-colors flex items-center justify-center gap-2">
+                        Ver Detalles <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+                </div>
+
+                <!-- Service 3: Vehicular -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-car-side"></i>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-2">Vehicular & Responsabilidad Civil</h3>
+                        <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                            Protección para tu vehículo particular o corporativo frente a choques, robos y grúa 24 horas.
+                        </p>
+                    </div>
+                    <button onclick="openModal('auto')" class="w-full py-2.5 px-4 rounded-xl border border-brand-200 text-brand-700 font-semibold text-sm hover:bg-brand-600 hover:text-white transition-colors flex items-center justify-center gap-2">
+                        Ver Detalles <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+                </div>
+
+                <!-- Service 4: Comercial -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-store"></i>
+                        </div>
+                        <h3 class="font-heading text-xl font-bold text-slate-900 mb-2">Comercial & Empresarial</h3>
+                        <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                            Asegura tu negocio, inventario, local comercial y la salud colectiva de tus trabajadores.
+                        </p>
+                    </div>
+                    <button onclick="openModal('comercial')" class="w-full py-2.5 px-4 rounded-xl border border-brand-200 text-brand-700 font-semibold text-sm hover:bg-brand-600 hover:text-white transition-colors flex items-center justify-center gap-2">
+                        Ver Detalles <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="cotizador" class="py-20 bg-brand-950 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-brand-300 font-semibold text-xs uppercase tracking-wider block">Herramienta Interactiva</span>
+                    <h2 class="font-heading text-3xl sm:text-4xl font-bold leading-tight">
+                        Cotizador Express de Seguro
+                    </h2>
+                    <p class="text-blue-100 text-sm sm:text-base leading-relaxed">
+                        Selecciona el tipo de seguro y tus requerimientos para generar un estimado aproximado. Puedes enviar tu cálculo directamente a Anahís por WhatsApp o correo para recibir la cotización detallada.
+                    </p>
+                    
+                    <div class="p-4 bg-brand-900/60 rounded-2xl border border-brand-800 flex items-center gap-3">
+                        <i class="fa-solid fa-circle-info text-gold-400 text-xl shrink-0"></i>
+                        <p class="text-xs text-blue-200">
+                            Estimación de referencia. Anahís ajustará la póliza según tu historial e intereses particulares.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Calculator Form -->
+                <div class="lg:col-span-7 bg-white text-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl">
+                    <form id="calculator-form" class="space-y-6" onsubmit="event.preventDefault();">
+                        
+                        <!-- Insurance Category -->
+                        <div>
+                            <label class="block text-sm font-bold text-slate-900 mb-2">1. Tipo de Seguro</label>
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="insurance_type" value="salud" class="peer hidden" checked onchange="calculateEstimate()">
+                                    <div class="p-3 rounded-xl border-2 border-slate-200 peer-checked:border-brand-600 peer-checked:bg-brand-50 text-center transition-all hover:border-slate-300">
+                                        <i class="fa-solid fa-heart-pulse text-brand-600 text-lg block mb-1"></i>
+                                        <span class="text-xs font-semibold">Salud</span>
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="insurance_type" value="vida" class="peer hidden" onchange="calculateEstimate()">
+                                    <div class="p-3 rounded-xl border-2 border-slate-200 peer-checked:border-brand-600 peer-checked:bg-brand-50 text-center transition-all hover:border-slate-300">
+                                        <i class="fa-solid fa-shield-halved text-brand-600 text-lg block mb-1"></i>
+                                        <span class="text-xs font-semibold">Vida</span>
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="insurance_type" value="auto" class="peer hidden" onchange="calculateEstimate()">
+                                    <div class="p-3 rounded-xl border-2 border-slate-200 peer-checked:border-brand-600 peer-checked:bg-brand-50 text-center transition-all hover:border-slate-300">
+                                        <i class="fa-solid fa-car text-brand-600 text-lg block mb-1"></i>
+                                        <span class="text-xs font-semibold">Vehicular</span>
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="insurance_type" value="comercial" class="peer hidden" onchange="calculateEstimate()">
+                                    <div class="p-3 rounded-xl border-2 border-slate-200 peer-checked:border-brand-600 peer-checked:bg-brand-50 text-center transition-all hover:border-slate-300">
+                                        <i class="fa-solid fa-store text-brand-600 text-lg block mb-1"></i>
+                                        <span class="text-xs font-semibold">Comercio</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Dropdowns -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-bold text-slate-900 mb-2">2. Rango de Edad Titular</label>
+                                <select id="age_range" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:outline-none text-sm" onchange="calculateEstimate()">
+                                    <option value="18-30">18 a 30 años</option>
+                                    <option value="31-45" selected>31 a 45 años</option>
+                                    <option value="46-60">46 a 60 años</option>
+                                    <option value="60+">Más de 60 años</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-bold text-slate-900 mb-2">3. Número de Personas / Cobertura</label>
+                                <select id="beneficiaries" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:outline-none text-sm" onchange="calculateEstimate()">
+                                    <option value="1">Sólo Titular</option>
+                                    <option value="2">Titular + 1 Pareja / Hijo</option>
+                                    <option value="3">Grupo Familiar (3 a 4 personas)</option>
+                                    <option value="5">Familia Numerosa (5+)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Estimate Display -->
+                        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 text-center">
+                            <span class="text-xs font-semibold uppercase text-slate-500 tracking-wider block">Estimación aproximada desde</span>
+                            <div class="font-heading text-4xl font-extrabold text-brand-900 my-1">
+                                $<span id="estimated-price">40</span> <span class="text-xs font-sans text-slate-500 font-normal">/ mes</span>
+                            </div>
+                            <span class="text-xs text-brand-700 font-medium"><i class="fa-solid fa-check-circle mr-1"></i> Incluye atención directa de Anahís Prieto</span>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <button type="button" onclick="sendQuoteToWhatsApp()" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 text-sm">
+                                <i class="fa-brands fa-whatsapp text-lg"></i> Enviar por WhatsApp
+                            </button>
+                            <button type="button" onclick="sendQuoteToEmail()" class="w-full bg-brand-800 hover:bg-brand-900 text-white font-bold py-3.5 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 text-sm">
+                                <i class="fa-solid fa-envelope text-lg"></i> Enviar por Correo
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="redes" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-slate-900 via-brand-950 to-slate-900 rounded-3xl p-8 sm:p-12 text-white relative overflow-hidden shadow-xl">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+                    
+                    <div class="lg:col-span-8 space-y-4 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/20 text-pink-300 text-xs font-bold uppercase tracking-wider">
+                            <i class="fa-brands fa-tiktok text-sm"></i> Contenido Educativo & Consejos
+                        </div>
+                        <h2 class="font-heading text-3xl sm:text-4xl font-bold">
+                            Sigue a Anahís Prieto en TikTok
+                        </h2>
+                        <p class="text-slate-300 text-sm sm:text-base max-w-2xl">
+                            Aprende sobre cómo funcionan las pólizas, consejos sobre salud, prevención de siniestros e información clave sobre seguros expresada de forma sencilla.
+                        </p>
+                    </div>
+
+                    <div class="lg:col-span-4 flex justify-center lg:justify-end">
+                        <a href="https://www.tiktok.com/@anahis.prieto28" target="_blank" class="bg-white text-slate-900 hover:bg-pink-50 hover:text-black font-extrabold px-8 py-4 rounded-2xl shadow-xl transition-all transform hover:scale-105 flex items-center gap-3">
+                            <i class="fa-brands fa-tiktok text-2xl text-pink-600"></i>
+                            <div class="text-left">
+                                <span class="block text-xs text-slate-500 font-normal">Ver perfil oficial</span>
+                                <span class="text-base tracking-tight">@anahis.prieto28</span>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-20 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-700 font-semibold text-xs uppercase tracking-wider block mb-2">Canales de Atención</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900">Ubicación & Contacto Directo</h2>
+                <p class="text-slate-600 mt-2 text-sm sm:text-base">Ponte en contacto con Anahís Filomena Prieto Romero de forma inmediata.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Contact Info Column -->
+                <div class="lg:col-span-5 space-y-6">
+                    
+                    <!-- Address Card -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+                        <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-700 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <h3 class="font-heading text-lg font-bold text-slate-900">Dirección de Oficina</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Calle 33 casa Y33-11 Urb. Yucatan II<br>
+                            Barquisimeto (Tamaca), Estado Lara<br>
+                            <span class="font-semibold text-brand-800">Zona Postal: 3001, Venezuela</span>
+                        </p>
+                    </div>
+
+                    <!-- Email Contact Card -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-700 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-envelope-open-text"></i>
+                        </div>
+                        <h3 class="font-heading text-lg font-bold text-slate-900">Correos Electrónicos</h3>
+                        <div class="space-y-2 text-sm">
+                            <a href="mailto:anahisfilomprieto@hotmail.com" class="block font-medium text-brand-700 hover:underline flex items-center gap-2">
+                                <i class="fa-regular fa-envelope text-slate-400"></i> anahisfilomprieto@hotmail.com
+                            </a>
+                            <a href="mailto:anahisfilomprieto71@gmail.com" class="block font-medium text-brand-700 hover:underline flex items-center gap-2">
+                                <i class="fa-regular fa-envelope text-slate-400"></i> anahisfilomprieto71@gmail.com
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Social Networks -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-between">
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm">TikTok Oficial</h4>
+                            <p class="text-xs text-slate-500">@anahis.prieto28</p>
+                        </div>
+                        <a href="https://www.tiktok.com/@anahis.prieto28" target="_blank" class="w-10 h-10 rounded-xl bg-slate-900 hover:bg-brand-600 text-white flex items-center justify-center transition-colors">
+                            <i class="fa-brands fa-tiktok text-lg"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+                <!-- Contact Form Column -->
+                <div class="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-xl">
+                    <h3 class="font-heading text-2xl font-bold text-slate-900 mb-2">Enviar Mensaje Directo</h3>
+                    <p class="text-slate-500 text-xs sm:text-sm mb-6">Completa los datos y Anahís te responderá en el menor tiempo posible.</p>
+
+                    <div id="form-success" class="hidden p-4 mb-6 bg-emerald-100 border border-emerald-300 text-emerald-800 rounded-xl text-sm">
+                        <i class="fa-solid fa-circle-check text-lg mr-2"></i> ¡Mensaje registrado con éxito! Anahís se pondrá en contacto contigo.
+                    </div>
+
+                    <form id="contact-form" class="space-y-4" onsubmit="handleContactSubmit(event)">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Nombre y Apellido</label>
+                                <input type="text" required placeholder="Ej. Carlos Mendoza" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand-500 focus:outline-none text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Teléfono / WhatsApp</label>
+                                <input type="tel" required placeholder="Ej. 0412 1234567" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand-500 focus:outline-none text-sm">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Correo Electrónico</label>
+                                <input type="email" required placeholder="tu@email.com" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand-500 focus:outline-none text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Seguro de Interés</label>
+                                <select class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand-500 focus:outline-none text-sm">
+                                    <option>Seguro de Salud / Gastos Médicos</option>
+                                    <option>Seguro de Vida y Protección Familiar</option>
+                                    <option>Seguro Vehicular / RCV</option>
+                                    <option>Seguro Comercial o Negocio</option>
+                                    <option>Consulta General</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Comentario o Consulta</label>
+                            <textarea rows="4" placeholder="Escribe aquí los detalles de tu consulta..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand-500 focus:outline-none text-sm"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-brand-800 hover:bg-brand-900 text-white font-bold py-3.5 rounded-xl transition-all shadow-md">
+                            Enviar Mensaje a Anahís Prieto
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-950 text-slate-400 py-10 border-t border-brand-900 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-lg bg-white p-1 flex items-center justify-center shrink-0">
+                    <svg viewBox="0 0 200 200" class="w-full h-full text-brand-800 fill-current">
+                        <rect width="200" height="200" rx="20" fill="#1E40AF"/>
+                        <g fill="#FFFFFF">
+                            <circle cx="72" cy="55" r="12" />
+                            <path d="M58 75 C58 70, 86 70, 86 75 L82 110 L75 110 L75 135 L69 135 L69 110 L62 110 Z" />
+                            <circle cx="102" cy="50" r="13" />
+                            <path d="M87 70 C87 65, 117 65, 117 70 L114 110 L106 110 L106 138 L98 138 L98 110 L90 110 Z" />
+                            <circle cx="130" cy="72" r="9" />
+                            <path d="M120 86 C120 82, 140 82, 140 86 L137 115 L132 115 L132 135 L127 135 L127 115 L123 115 Z" />
+                        </g>
+                        <g fill="#FFFFFF">
+                            <path d="M30 145 C 30 110, 65 100, 85 130 C 88 135, 82 140, 77 135 C 62 112, 45 125, 42 145 C 40 155, 60 172, 85 172 L 85 182 C 50 182, 30 165, 30 145 Z"/>
+                            <path d="M170 145 C 170 110, 135 100, 115 130 C 112 135, 118 140, 123 135 C 138 112, 155 125, 158 145 C 160 155, 140 172, 115 172 L 115 182 C 150 182, 170 165, 170 145 Z"/>
+                        </g>
+                    </svg>
+                </div>
+                <div>
+                    <p class="font-bold text-white text-sm">Anahís Filomena Prieto Romero</p>
+                    <p class="text-slate-400">Asesora de Seguros • Barquisimeto, Lara</p>
+                </div>
+            </div>
+
+            <p>© 2026 Anahís Filomena Prieto Romero. Todos los derechos reservados.</p>
+
+            <div class="flex gap-4">
+                <a href="https://www.tiktok.com/@anahis.prieto28" target="_blank" class="hover:text-white transition-colors">
+                    <i class="fa-brands fa-tiktok text-base"></i>
+                </a>
+                <a href="mailto:anahisfilomprieto@hotmail.com" class="hover:text-white transition-colors">
+                    <i class="fa-solid fa-envelope text-base"></i>
+                </a>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Service Modal Structure -->
+    <div id="service-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-xl w-full p-6 sm:p-8 relative shadow-2xl">
+            <button onclick="closeModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-700 text-xl p-2">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="modal-content">
+                <!-- Dynamic Content injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/?text=Hola%20Anah%C3%ADs,%20quisiera%20recibir%20asesor%C3%ADa%20sobre%20una%20p%C3%B3liza" target="_blank" class="fixed bottom-6 right-6 z-40 bg-emerald-600 hover:bg-emerald-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-2xl transition-all transform hover:scale-110">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Modal Services Data
+        const servicesData = {
+            salud: {
+                title: "Seguro de Salud & Gastos Médicos",
+                icon: "fa-notes-medical",
+                description: "Cobertura de salud integral para garantizar la atención médica inmediata que necesitas sin comprometer la estabilidad económica familiar.",
+                features: [
+                    "Atención en clínicas de primer nivel a nivel nacional e internacional.",
+                    "Cobertura de emergencias, consultas especializadas y cirugías.",
+                    "Atención médica domiciliaria y asistencia de emergencias.",
+                    "Asesoría directa en la emisión de cartas avales y reembolsos."
+                ]
+            },
+            vida: {
+                title: "Seguro de Vida & Patrimonio Familiar",
+                icon: "fa-people-roof",
+                description: "Protección financiera integral para asegurar el bienestar continuo de tus hijos y seres queridos ante contingencias imprevistas.",
+                features: [
+                    "Resguardo financiero inmediato para tus beneficiarios.",
+                    "Planes de ahorro y protección a largo plazo.",
+                    "Fondo para estudios superiores de tus hijos.",
+                    "Resguardo del patrimonio familiar acumulado."
+                ]
+            },
+            auto: {
+                title: "Seguro Vehicular & Responsabilidad Civil",
+                icon: "fa-car-side",
+                description: "Tranquilidad al conducir tu vehículo particular o flota de empresa ante cualquier choque, daño o eventualidad vial.",
+                features: [
+                    "Cobertura ante colisiones, pérdidas totales y robos.",
+                    "Responsabilidad Civil Vehicular (RCV) obligatoria y extendida.",
+                    "Servicio de grúa y asistencia vial 24 horas al día.",
+                    "Asesoría técnica inmediata durante accidentes."
+                ]
+            },
+            comercial: {
+                title: "Seguro Comercial & Empresarial",
+                icon: "fa-store",
+                description: "Resguardo para locales comerciales, inventarios, mercancías e instalaciones frente a riesgos de incendio o desastres.",
+                features: [
+                    "Protección de infraestructura, mobiliario y mercadería.",
+                    "Seguros de salud colectivo para colaboradores y empleados.",
+                    "Responsabilidad civil frente a clientes y terceros.",
+                    "Protección ante robos y contingencias operativas."
+                ]
+            }
+        };
+
+        // Mobile Menu Script
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Modal Functions
+        function openModal(key) {
+            const data = servicesData[key];
+            if (!data) return;
+
+            const modalContent = document.getElementById('modal-content');
+            modalContent.innerHTML = `
+                <div class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-700 flex items-center justify-center text-2xl mb-4">
+                    <i class="fa-solid ${data.icon}"></i>
+                </div>
+                <h3 class="font-heading text-2xl font-bold text-slate-900 mb-2">${data.title}</h3>
+                <p class="text-slate-600 text-sm mb-6 leading-relaxed">${data.description}</p>
+                <h4 class="font-bold text-slate-900 text-sm mb-3">Características principales:</h4>
+                <ul class="space-y-2.5 mb-6 text-sm text-slate-600">
+                    ${data.features.map(f => `<li class="flex items-start gap-2"><i class="fa-solid fa-check text-brand-600 mt-1"></i> <span>${f}</span></li>`).join('')}
+                </ul>
+                <a href="#cotizador" onclick="closeModal()" class="w-full bg-brand-800 hover:bg-brand-900 text-white font-bold py-3 rounded-xl text-center block transition-colors">
+                    Solicitar Cotización con Anahís
+                </a>
+            `;
+
+            document.getElementById('service-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('service-modal').classList.add('hidden');
+        }
+
+        // Estimator Calculation
+        function calculateEstimate() {
+            const type = document.querySelector('input[name="insurance_type"]:checked').value;
+            const age = document.getElementById('age_range').value;
+            const beneficiaries = parseInt(document.getElementById('beneficiaries').value);
+
+            let base = 30;
+            if (type === 'salud') base = 40;
+            if (type === 'vida') base = 35;
+            if (type === 'auto') base = 25;
+            if (type === 'comercial') base = 50;
+
+            let ageFactor = 1;
+            if (age === '31-45') ageFactor = 1.2;
+            if (age === '46-60') ageFactor = 1.5;
+            if (age === '60+') ageFactor = 2.0;
+
+            const total = Math.round(base * ageFactor * (1 + (beneficiaries - 1) * 0.35));
+            document.getElementById('estimated-price').innerText = total;
+        }
+
+        function sendQuoteToWhatsApp() {
+            const type = document.querySelector('input[name="insurance_type"]:checked').value.toUpperCase();
+            const age = document.getElementById('age_range').value;
+            const beneficiaries = document.getElementById('beneficiaries').value;
+            const price = document.getElementById('estimated-price').innerText;
+
+            const message = `Hola Anahís Prieto,%0AMe gustaría recibir más información sobre un seguro:%0A- *Tipo:* ${type}%0A- *Edad:* ${age}%0A- *Personas:* ${beneficiaries}%0A- *Estimación Web:* $${price}/mes%0A%0AQuedo atento a tus comentarios.`;
+            window.open(`https://wa.me/?text=${message}`, '_blank');
+        }
+
+        function sendQuoteToEmail() {
+            const type = document.querySelector('input[name="insurance_type"]:checked').value.toUpperCase();
+            const age = document.getElementById('age_range').value;
+            const beneficiaries = document.getElementById('beneficiaries').value;
+            const price = document.getElementById('estimated-price').innerText;
+
+            const subject = encodeURIComponent("Consulta de Seguro - Anahís Prieto Asesora");
+            const body = encodeURIComponent(`Hola Anahís Filomena Prieto,\n\nSolicito información sobre la siguiente cotización:\n\n- Tipo de Seguro: ${type}\n- Rango de Edad: ${age}\n- Personas a asegurar: ${beneficiaries}\n- Costo Estimado: $${price}/mes\n\nPor favor contáctame para evaluar opciones.`);
+
+            window.location.href = `mailto:anahisfilomprieto@hotmail.com?subject=${subject}&body=${body}`;
+        }
+
+        // Contact Form Submission Mock
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            const successBox = document.getElementById('form-success');
+            const form = document.getElementById('contact-form');
+            
+            successBox.classList.remove('hidden');
+            form.reset();
+            
+            setTimeout(() => {
+                successBox.classList.add('hidden');
+            }, 6000);
+        }
+    </script>
+</body>
+</html>

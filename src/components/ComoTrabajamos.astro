@@ -1,0 +1,124 @@
+---
+const funciones = [
+  {
+    icon: "fa-solid fa-notes-medical",
+    title: "Salud y Personales",
+    text: "Asesoría en pólizas de HCM (Hospitalización, Cirugía y Maternidad), vida y accidentes personales.",
+  },
+  {
+    icon: "fa-solid fa-building",
+    title: "Patrimoniales y Empresariales",
+    text: "Cobertura para inmuebles, comercios, empresas, responsabilidad civil y transporte de mercancía.",
+  },
+  {
+    icon: "fa-solid fa-car-side",
+    title: "Automóvil",
+    text: "Pólizas de casco vehicular, responsabilidad civil vehicular (RCV) y asistencia en viajes o grúa.",
+  },
+  {
+    icon: "fa-solid fa-file-invoice-dollar",
+    title: "Gestión de Reclamos y Siniestros",
+    text: "Acompañamiento al asegurado ante la compañía aseguradora para tramitar indemnizaciones o reembolsos médicos.",
+  },
+];
+---
+
+<section id="como-trabajamos" class="py-20 bg-slate-50 relative overflow-hidden">
+
+  <!-- Imagen decorativa de fondo, semitransparente -->
+  <img
+    src="/Gemini_Generated_Image_5yh775yh775yh775-removebg-preview.png"
+    alt=""
+    aria-hidden="true"
+    class="como-trabajamos-bg pointer-events-none select-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-72 sm:w-[44rem] lg:w-[52rem] max-w-none opacity-10 sm:opacity-15"
+    loading="lazy"
+    decoding="async"
+  />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <span class="text-brand-700 font-semibold text-xs uppercase tracking-wider block mb-2">
+        Nuestra Alianza
+      </span>
+      <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900">¿Cómo trabajamos?</h2>
+      <p class="text-slate-600 mt-3 text-sm sm:text-base">
+        Mi asesoría respalda en una firma consolidada: trabajo aliada con{" "}
+        <strong class="font-semibold text-brand-900">BARECA Oficina de Corretaje</strong>, lo que te
+        garantiza procesos formales, respaldo institucional y acceso a las mejores opciones del
+        mercado.
+      </p>
+    </div>
+
+    <!-- Panel BARECA -->
+    <div
+      class="bg-white rounded-3xl border border-brand-100 p-7 sm:p-10 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-center max-w-5xl mx-auto"
+    >
+      <div class="lg:col-span-8">
+        <div class="flex items-center gap-4">
+          <div
+            class="w-14 h-14 rounded-2xl bg-brand-600 text-white flex items-center justify-center text-xl shrink-0"
+          >
+            <i class="fa-solid fa-briefcase"></i>
+          </div>
+          <div>
+            <h3 class="font-heading text-xl sm:text-2xl font-bold text-slate-900">
+              BARECA Oficina de Corretaje
+            </h3>
+            <p class="text-xs text-brand-600 font-semibold uppercase tracking-wider mt-0.5">
+              Firma venezolana de corretaje de seguros
+            </p>
+          </div>
+        </div>
+        <p class="text-slate-600 text-sm sm:text-base leading-relaxed mt-5">
+          Firma venezolana especializada en corretaje y asesoría de seguros, con sede principal en
+          <strong class="font-semibold text-slate-800">Barquisimeto, Estado Lara</strong>. Actúa
+          como intermediario o corredor de seguros autorizado, con el objetivo principal de asesorar
+          a personas y empresas en la selección, contratación y gestión de pólizas de seguros.
+        </p>
+      </div>
+      <div class="lg:col-span-4">
+        <ul class="space-y-3 text-sm">
+          <li class="flex items-center gap-2.5 text-slate-700">
+            <i class="fa-solid fa-shield-halved text-brand-600"></i>
+            Corredor de seguros autorizado
+          </li>
+          <li class="flex items-center gap-2.5 text-slate-700">
+            <i class="fa-solid fa-users text-brand-600"></i>
+            Personas, emprendedores y empresas
+          </li>
+          <li class="flex items-center gap-2.5 text-slate-700">
+            <i class="fa-solid fa-map-location-dot text-brand-600"></i>
+            Sede en Barquisimeto, Lara
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Funciones / servicios del corretaje -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
+      {
+        funciones.map((item) => (
+          <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-lg transition-shadow">
+            <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-700 flex items-center justify-center text-xl mb-4">
+              <i class={item.icon} />
+            </div>
+            <h3 class="font-heading text-lg font-bold text-slate-900 mb-1.5">{item.title}</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">{item.text}</p>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Ubicación -->
+    <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 text-sm text-slate-600">
+      <span class="inline-flex items-center gap-2 bg-white border border-slate-200 rounded-full px-4 py-2 shadow-sm">
+        <i class="fa-solid fa-location-dot text-brand-600"></i>
+        Av. Lara con Av. Los Leones · Barquisimeto, Estado Lara
+      </span>
+      <span class="inline-flex items-center gap-2 bg-white border border-slate-200 rounded-full px-4 py-2 shadow-sm">
+        <i class="fa-solid fa-globe text-brand-600"></i>
+        Asesoría digital en todo el país
+      </span>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,81 @@
+<div
+  id="legal-modal"
+  class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4"
+>
+  <div class="bg-white rounded-3xl max-w-xl w-full p-6 sm:p-8 relative shadow-2xl">
+    <button
+      type="button"
+      id="legal-modal-close"
+      class="absolute top-5 right-5 text-slate-400 hover:text-slate-700 text-xl p-2"
+      aria-label="Cerrar documento legal"
+    >
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <div id="legal-modal-content"></div>
+  </div>
+</div>
+
+<script>
+  import { SITE } from "../data/site";
+
+  const docs = {
+    aviso: {
+      title: "Aviso Legal",
+      body: [
+        `Este sitio web es titularidad de ${SITE.name}, asesora de seguros, aliada de BARECA Oficina de Corretaje, firma venezolana de corretaje y asesoría de seguros con sede principal en Barquisimeto, Estado Lara.`,
+        `El contenido de esta página es exclusivamente informativo: no se contratan pólizas ni se realizan transacciones en línea. La contratación y la cobertura definitiva se formalizan directamente con cada compañía aseguradora y están sujetas a las condiciones de cada póliza.`,
+        `Para consultas, cotizaciones y gestiones, el contacto se establece de forma directa por WhatsApp al ${SITE.phoneDisplay} o por correo electrónico a ${SITE.emails[0]}.`,
+        `Todos los contenidos, textos e imágenes de este sitio pertenecen a ${SITE.name} y no pueden reutilizarse sin autorización.`,
+      ],
+    },
+    privacidad: {
+      title: "Política de Privacidad",
+      body: [
+        `Este sitio web no recopila datos personales: no cuenta con formularios, registro de usuarios ni almacena información en servidores propios.`,
+        `No se utilizan cookies de análisis ni herramientas de seguimiento.`,
+        `La comunicación con la asesora se establece directamente a través de WhatsApp (que opera bajo su propia política de privacidad) o del correo electrónico ${SITE.emails[0]}, gestionado por la plataforma correspondiente.`,
+        `Si contactas por esos canales, la información que compartas se usará únicamente para atender tu consulta y ofrecerte asesoría de seguros.`,
+        `Para cualquier duda sobre esta política, escribe a ${SITE.emails[0]}.`,
+      ],
+    },
+  };
+
+  const modal = document.getElementById("legal-modal");
+  const content = document.getElementById("legal-modal-content");
+
+  function openLegal(key?: string) {
+    const doc = docs[key as keyof typeof docs];
+    if (!doc || !modal || !content) return;
+
+    content.innerHTML = `
+      <h3 class="font-heading text-2xl font-bold text-slate-900 mb-5 pr-8">${doc.title}</h3>
+      <div class="space-y-3 max-h-[60vh] overflow-y-auto pr-2">
+        ${doc.body.map((p) => `<p class="text-sm text-slate-600 leading-relaxed">${p}</p>`).join("")}
+      </div>
+    `;
+
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeLegal() {
+    modal?.classList.add("hidden");
+    modal?.classList.remove("flex");
+    document.body.style.overflow = "";
+  }
+
+  document.querySelectorAll<HTMLElement>("[data-legal]").forEach((link) => {
+    link.addEventListener("click", () => openLegal(link.dataset.legal));
+  });
+
+  document.getElementById("legal-modal-close")?.addEventListener("click", closeLegal);
+
+  modal?.addEventListener("click", (event) => {
+    if (event.target === modal) closeLegal();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeLegal();
+  });
+</script>

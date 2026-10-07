@@ -1,0 +1,296 @@
+---
+import FamilyLogo from "./FamilyLogo.astro";
+import { SITE, whatsappUrl } from "../data/site";
+
+const links = [
+  { href: "#inicio", label: "Inicio" },
+  { href: "#como-trabajamos", label: "Cómo Trabajamos" },
+  { href: "#sobre-mi", label: "Sobre Mí" },
+  { href: "#servicios", label: "Servicios" },
+  { href: "#contacto", label: "Ubicación & Contacto" },
+];
+---
+
+<nav class="fixed top-0 left-0 right-0 z-50 glass-nav text-white border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+    <!-- Logo + nombre: a la izquierda en móvil; texto siempre visible -->
+    <a href="#inicio" class="brand-link flex items-center gap-3 group shrink-0">
+      <div class="w-11 h-11 md:w-12 md:h-12 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+        <FamilyLogo />
+      </div>
+      <div class="text-left">
+        <span class="font-heading text-base sm:text-lg font-bold tracking-tight block leading-tight text-white">
+          {SITE.shortName}
+        </span>
+        <span class="block text-xs text-brand-200 font-medium tracking-wider uppercase">
+          {SITE.tagline}
+        </span>
+      </div>
+    </a>
+
+    <!-- Menú hamburguesa: a la derecha en móvil -->
+    <button
+      id="mobile-menu-btn"
+      type="button"
+      class="hamburger-btn md:hidden relative w-11 h-11 shrink-0 rounded-xl bg-white/10 hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-300 p-0"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      aria-label="Abrir menú de navegación"
+    >
+      <span class="hamburger-box relative block w-6 h-6 mx-auto">
+        <span class="hamburger-bar bar-1"></span>
+        <span class="hamburger-bar bar-2"></span>
+        <span class="hamburger-bar bar-3"></span>
+      </span>
+    </button>
+
+    <!-- Menú desktop: píldoras espaciadas, etiquetas cortas hasta xl -->
+    <div class="hidden md:flex items-center gap-1 text-sm font-medium order-2">
+      {
+        links.map((link) => {
+          if (link.href === "#contacto") {
+            return (
+              <a
+                href={link.href}
+                class="nav-link px-2.5 py-2 rounded-lg hover:bg-white/10 hover:text-brand-200 transition-colors whitespace-nowrap"
+              >
+                <span class="xl:hidden">Contacto</span>
+                <span class="hidden xl:inline">Ubicación &amp; Contacto</span>
+              </a>
+            );
+          }
+          return (
+            <a
+              href={link.href}
+              class="nav-link px-2.5 py-2 rounded-lg hover:bg-white/10 hover:text-brand-200 transition-colors whitespace-nowrap"
+            >
+              {link.label}
+            </a>
+          );
+        })
+      }
+    </div>
+
+    <div class="hidden lg:flex items-center order-3 lg:ml-2 xl:ml-3 lg:pl-2 xl:pl-3 lg:border-l lg:border-white/15">
+      <a
+        href={whatsappUrl()}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="whatsapp-glow bg-emerald-600 hover:bg-emerald-500 text-white px-4 xl:px-5 py-2.5 rounded-full font-medium transition-all shadow-md hover:shadow-emerald-900/50 flex items-center gap-2 text-sm whitespace-nowrap"
+      >
+        <i class="fa-brands fa-whatsapp text-lg"></i>
+        <span class="xl:hidden">WhatsApp</span>
+        <span class="hidden xl:inline">Contactar por WhatsApp</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Menú móvil desplegable -->
+  <div
+    id="mobile-menu"
+    class="mobile-menu md:hidden overflow-hidden max-h-0 transition-[max-height] duration-500 ease-in-out border-b border-white/10 px-4"
+  >
+    <nav class="py-3 space-y-1" aria-label="Navegación móvil">
+      {
+        links.map((link, i) => (
+          <a
+            href={link.href}
+            class="mobile-link flex items-center justify-center py-3 border-b border-brand-900/70 hover:text-brand-300 hover:bg-brand-900/40 rounded-lg transition-colors"
+            style={`transition-delay: ${i * 40}ms`}
+          >
+            {link.label}
+          </a>
+        ))
+      }
+      <a
+        href={whatsappUrl()}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mobile-link mt-3 mb-2 bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-3 rounded-full font-medium flex items-center justify-center gap-2 w-full"
+      >
+        <i class="fa-brands fa-whatsapp mr-1"></i> WhatsApp Directo
+      </a>
+    </nav>
+  </div>
+</nav>
+
+<style>
+  /* Barras del hamburguesa */
+  .hamburger-box {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .hamburger-bar {
+    position: absolute;
+    left: 2px;
+    right: 2px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: currentColor;
+    transition:
+      transform 0.3s ease-in-out,
+      opacity 0.25s ease-in-out,
+      top 0.3s ease-in-out;
+  }
+
+  .bar-1 {
+    top: 5px;
+  }
+  .bar-2 {
+    top: 11px;
+  }
+  .bar-3 {
+    top: 17px;
+  }
+
+  /* X cuando está abierto */
+  .is-open .bar-1 {
+    top: 11px;
+    transform: rotate(45deg);
+  }
+  .is-open .bar-2 {
+    opacity: 0;
+    transform: scaleX(0.4);
+  }
+  .is-open .bar-3 {
+    top: 11px;
+    transform: rotate(-45deg);
+  }
+
+  /* Links del menú desplegable */
+  .mobile-link {
+    opacity: 0;
+    transform: translateY(-8px);
+    transition:
+      opacity 0.35s ease,
+      transform 0.35s ease;
+  }
+
+  .is-open .mobile-link,
+  .mobile-menu.menu-shown .mobile-link {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Subrayado deslizante en links del menú desktop */
+  .nav-link {
+    position: relative;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0.5rem;
+    right: 0.5rem;
+    bottom: 0.3rem;
+    height: 2px;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, #93c5fd, #22d3ee);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.3s ease;
+  }
+
+  .nav-link:hover::after,
+  .nav-link.nav-active::after {
+    transform: scaleX(1);
+  }
+
+  /* Enlace de la sección visible */
+  .nav-link.nav-active {
+    background-color: rgb(255 255 255 / 0.15);
+    color: #ffffff;
+  }
+
+  /* Glow sutil pulsante del botón WhatsApp */
+  @keyframes whatsapp-pulso {
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.45);
+    }
+    50% {
+      box-shadow: 0 0 0 9px rgba(37, 211, 102, 0);
+    }
+  }
+
+  .whatsapp-glow {
+    animation: whatsapp-pulso 2.6s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .whatsapp-glow {
+      animation: none;
+    }
+
+    .nav-link::after {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  const btn = document.getElementById("mobile-menu-btn");
+  const menu = document.getElementById("mobile-menu");
+
+  function setOpen(open: boolean) {
+    btn?.classList.toggle("is-open", open);
+    menu?.classList.toggle("menu-shown", open);
+
+    if (!menu) return;
+    if (open) {
+      menu.style.maxHeight = menu.scrollHeight + "px";
+    } else {
+      menu.style.maxHeight = "0px";
+    }
+
+    btn?.setAttribute("aria-expanded", String(open));
+    btn?.setAttribute("aria-label", open ? "Cerrar menú de navegación" : "Abrir menú de navegación");
+  }
+
+  btn?.addEventListener("click", () => {
+    const isOpen = btn?.classList.contains("is-open") ?? false;
+    setOpen(!isOpen);
+  });
+
+  menu?.querySelectorAll("a").forEach((link) =>
+    link.addEventListener("click", () => setOpen(false))
+  );
+
+  window.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") setOpen(false);
+  });
+
+  // Reset al cambiar a desktop
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 768) setOpen(false);
+  });
+
+  // Resaltar el enlace de la sección visible
+  const navLinks = document.querySelectorAll<HTMLAnchorElement>(".nav-link");
+  const sections = [...navLinks]
+    .map((link) => document.querySelector<HTMLElement>(link.getAttribute("href") ?? ""))
+    .filter((s): s is HTMLElement => s !== null);
+
+  function setActive(id: string) {
+    navLinks.forEach((link) => {
+      link.classList.toggle("nav-active", link.getAttribute("href") === `#${id}`);
+    });
+  }
+
+  if (sections.length > 0) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      },
+      // Compensa la barra fija de 5rem y usa la franja central como referencia
+      { rootMargin: "-40% 0px -55% 0px" }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    setActive(sections[0].id);
+  }
+</script>

@@ -1,0 +1,407 @@
+---
+import { SITE } from "../data/site";
+---
+
+<section
+  id="inicio"
+  class="hero-bg text-white relative overflow-hidden w-full min-h-screen flex items-center pt-28 lg:pt-24 pb-20 lg:pb-24"
+>
+  <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:20px_20px]"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+    <div class="grid grid-cols-1 gap-y-6 lg:grid-cols-12 lg:gap-x-12 items-center">
+      <div class="lg:col-span-7 lg:col-start-1 lg:row-start-1 text-center lg:text-left">
+        <div
+          class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-200 text-xs sm:text-sm font-medium"
+        >
+          <i class="fa-solid fa-location-dot text-brand-300"></i>
+          <span>{SITE.locationBadge}</span>
+        </div>
+
+        <h1 class="font-heading text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
+          Protegiendo lo que más amas
+          <span class="text-gradient"> con respaldo, ética y confianza.</span>
+        </h1>
+      </div>
+
+      <!-- Retrato: tras el título en móvil, columna derecha en desktop -->
+      <div class="lg:col-span-5 lg:col-start-8 lg:row-start-1 lg:row-span-3 flex justify-center">
+        <div class="relative w-full max-w-[21rem] sm:max-w-sm pt-4 sm:pt-12 flex flex-col items-center">
+          <div class="portrait-wrap relative">
+            <!-- Resplandor general tras el rombo -->
+            <div
+              class="portrait-glow absolute left-1/2 top-[47%] -translate-x-1/2 -translate-y-1/2 w-[150%] h-[100%] rounded-full bg-gradient-to-b from-blue-500/25 via-indigo-600/20 to-transparent blur-3xl"
+              aria-hidden="true"
+            >
+            </div>
+
+            <!-- Ecos romboidales concéntricos que se expanden a los lados -->
+            <div class="diamond-echo echo-1" aria-hidden="true"></div>
+            <div class="diamond-echo echo-2" aria-hidden="true"></div>
+            <div class="diamond-echo echo-3" aria-hidden="true"></div>
+
+            <!-- Rombo central con trazo neón y glow -->
+            <div class="diamond-frame" aria-hidden="true"></div>
+
+            <!-- Destello diamante que nace detrás y se desvanece -->
+            <div class="sparkles" aria-hidden="true"></div>
+
+            <img
+              src="/anahis-retrato.png"
+              alt="Anahís Filomena Prieto Romero, asesora de seguros, con los brazos cruzados"
+              class="portrait relative z-[5] mx-auto w-64 sm:w-72 lg:w-80 h-auto object-contain drop-shadow-2xl"
+              width="331"
+              height="465"
+              loading="eager"
+              decoding="async"
+            />
+
+            <div class="bubble bubble-1" title="Protección integral"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="bubble bubble-2" title="Salud & Gastos Médicos"><i class="fa-solid fa-heart-pulse"></i></div>
+            <div class="bubble bubble-3" title="Vida & Patrimonio"><i class="fa-solid fa-people-roof"></i></div>
+            <div class="bubble bubble-4" title="Vehicular & RCV"><i class="fa-solid fa-car-side"></i></div>
+            <div class="bubble bubble-5" title="Comercial & Empresarial"><i class="fa-solid fa-store"></i></div>
+          </div>
+
+          <div class="bubble-name" title="Anahís Prieto · Asesora Profesional de Seguros">
+            <p class="font-heading text-lg font-bold leading-tight">{SITE.cardName}</p>
+            <p class="bubble-sub text-xs font-medium uppercase tracking-wider mt-0.5">
+              Asesora Profesional de Seguros
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 lg:col-start-1 lg:row-start-2 text-center lg:text-left">
+        <p class="text-blue-100 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+          Hola, soy <strong class="font-semibold text-white">{SITE.name}</strong>. Te brindo atención
+          directa y asesoría especializada en seguros de salud, vida y patrimonio adaptados a ti y a
+          tu familia.
+        </p>
+      </div>
+
+      <div class="lg:col-span-7 lg:col-start-1 lg:row-start-3 text-center lg:text-left">
+        <div class="pt-8 border-t border-brand-800/80 grid grid-cols-3 gap-4 text-center lg:text-left">
+          <div>
+            <p class="font-heading text-2xl sm:text-3xl font-bold text-white">100%</p>
+            <p class="text-xs sm:text-sm text-blue-200">Atención Personalizada</p>
+          </div>
+          <div>
+            <p class="font-heading text-2xl sm:text-3xl font-bold text-white">24/7</p>
+            <p class="text-xs sm:text-sm text-blue-200">Asistencia Siniestros</p>
+          </div>
+          <div>
+            <p class="font-heading text-2xl sm:text-3xl font-bold text-gold-400">Lara</p>
+            <p class="text-xs sm:text-sm text-blue-200">Barquisimeto y Todo el País</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a
+    href="#sobre-mi"
+    class="scroll-hint absolute left-1/2 bottom-5 -translate-x-1/2 z-20 hidden md:flex flex-col items-center gap-1.5 text-white/60 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 rounded-full p-2"
+    aria-label="Bajar a la siguiente sección"
+  >
+    <span class="scroll-hint-inner">
+      <i class="fa-solid fa-mouse scroll-mouse"></i>
+      <i class="fa-solid fa-chevron-down scroll-arrow"></i>
+    </span>
+  </a>
+</section>
+
+<style>
+  /* Encima del glow, por detrás del retrato */
+  .sparkles {
+    position: absolute;
+    top: 22%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    z-index: 1;
+  }
+
+  /* ===== Rombo central con trazo neón cian y glow ===== */
+  .diamond-frame {
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    width: 16.5rem;
+    height: 16.5rem;
+    transform: translate(-50%, -50%) rotate(45deg);
+    border: 2px solid rgba(34, 211, 238, 0.85);
+    border-radius: 1.4rem;
+    box-shadow:
+      0 0 20px rgba(34, 211, 238, 0.55),
+      0 0 55px rgba(59, 130, 246, 0.45),
+      inset 0 0 30px rgba(34, 211, 238, 0.18);
+    background:
+      linear-gradient(135deg, rgba(165, 243, 252, 0.75) 0%, transparent 20%) top left,
+      linear-gradient(315deg, rgba(165, 243, 252, 0.75) 0%, transparent 20%) bottom right;
+    background-repeat: no-repeat;
+    background-size: 28% 28%;
+    z-index: 1;
+    animation: rombo-pulso 4.5s ease-in-out infinite;
+  }
+
+  @media (min-width: 640px) {
+    .diamond-frame {
+      width: 18.5rem;
+      height: 18.5rem;
+    }
+  }
+
+  /* ===== Ecos romboidales concéntricos (ondas hacia los lados) ===== */
+  .diamond-echo {
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    width: 16.5rem;
+    height: 16.5rem;
+    border: 1.5px solid rgba(125, 211, 252, 0.65);
+    border-radius: 1.4rem;
+    transform: translate(-50%, -50%) rotate(45deg);
+    filter: blur(1.5px);
+    animation: eco-expandir 4.5s ease-out infinite;
+    z-index: 0;
+  }
+
+  @media (min-width: 640px) {
+    .diamond-echo {
+      width: 18.5rem;
+      height: 18.5rem;
+    }
+  }
+
+  .echo-2 {
+    animation-delay: -1.5s;
+  }
+
+  .echo-3 {
+    animation-delay: -3s;
+  }
+
+  @keyframes eco-expandir {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, -50%) rotate(45deg) scale(0.92);
+    }
+    25% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 0;
+      transform: translate(-50%, -50%) rotate(45deg) scale(1.65);
+    }
+  }
+
+  /* ===== Destellos naciendo detrás del retrato ===== */
+  .sparkles::before,
+  .sparkles::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0.9rem;
+    height: 0.9rem;
+    background-color: #ffffff;
+    box-shadow:
+      0 0 10px rgba(255, 255, 255, 0.95),
+      0 0 24px rgba(103, 232, 249, 0.9);
+    animation: diamante-brillar 3.2s ease-out infinite;
+  }
+
+  .sparkles::before {
+    transform: rotate(45deg) scale(1);
+  }
+
+  .sparkles::after {
+    width: 0.55rem;
+    height: 0.55rem;
+    top: -0.25rem;
+    left: -0.25rem;
+    animation-delay: -1.6s;
+  }
+
+  @keyframes diamante-brillar {
+    0% {
+      opacity: 0;
+      transform: rotate(45deg) scale(0.3);
+    }
+    22% {
+      opacity: 1;
+      transform: rotate(45deg) scale(1.08);
+    }
+    100% {
+      opacity: 0;
+      transform: rotate(45deg) translateX(6rem) scale(0.05);
+    }
+  }
+
+  /* Pulso sutil del rombo central */
+  @keyframes rombo-pulso {
+    0%,
+    100% {
+      box-shadow:
+        0 0 20px rgba(34, 211, 238, 0.55),
+        0 0 55px rgba(59, 130, 246, 0.45),
+        inset 0 0 30px rgba(34, 211, 238, 0.18);
+    }
+    50% {
+      box-shadow:
+        0 0 28px rgba(34, 211, 238, 0.75),
+        0 0 75px rgba(59, 130, 246, 0.6),
+        inset 0 0 38px rgba(34, 211, 238, 0.28);
+    }
+  }
+
+  /* Placa rectangular del nombre: pegada al borde inferior del retrato, sin animación */
+  .bubble-name {
+    position: relative;
+    margin-top: -0.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    border-radius: 0.8rem;
+    background-color: #ffffff;
+    color: var(--color-brand-800);
+    padding: 1rem 2.5rem;
+    text-align: center;
+    box-shadow:
+      0 14px 30px -6px rgba(8, 25, 45, 0.6),
+      0 0 0 5px rgba(147, 197, 253, 0.35),
+      0 0 22px rgba(96, 165, 250, 0.35);
+    z-index: 20;
+  }
+
+  .bubble-sub {
+    color: var(--color-brand-600);
+  }
+
+  /* Círculos flotantes: más grandes y visibles */
+  .bubble {
+    position: absolute;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 9999px;
+    background-color: #ffffff;
+    color: var(--color-brand-800);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+      0 14px 30px -6px rgba(8, 25, 45, 0.6),
+      0 0 0 5px rgba(147, 197, 253, 0.35),
+      0 0 22px rgba(96, 165, 250, 0.35);
+    animation: burbuja-flotar 6s ease-in-out infinite;
+    z-index: 20;
+  }
+
+  @media (min-width: 640px) {
+    .bubble {
+      width: 4.25rem;
+      height: 4.25rem;
+    }
+
+    .bubble i {
+      font-size: 1.55rem;
+    }
+  }
+
+  .bubble i {
+    font-size: 1.35rem;
+  }
+
+  .bubble-1 {
+    top: -1.1rem;
+    left: 1.25rem;
+  }
+
+  .bubble-2 {
+    top: 3.5rem;
+    right: -1.5rem;
+    animation-duration: 5.5s;
+    animation-delay: -1.2s;
+  }
+
+  .bubble-3 {
+    top: 44%;
+    left: -1.9rem;
+    animation-duration: 6.5s;
+    animation-delay: -2.4s;
+  }
+
+  .bubble-4 {
+    top: 53%;
+    right: -1.7rem;
+    animation-delay: -3s;
+  }
+
+  .bubble-5 {
+    bottom: 1.75rem;
+    left: 0.9rem;
+    animation-duration: 5s;
+    animation-delay: -4s;
+  }
+
+  @keyframes burbuja-flotar {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* ===== Indicador de scroll: icono de ratón + flecha moviéndose como un solo bloque ===== */
+  .scroll-hint-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    animation: flecha-bajar 2s ease-in-out infinite;
+  }
+
+  .scroll-mouse {
+    font-size: 1.45rem;
+    line-height: 1;
+  }
+
+  .scroll-arrow {
+    font-size: 0.85rem;
+  }
+
+  @keyframes flecha-bajar {
+    0%,
+    100% {
+      transform: translateY(0);
+      opacity: 0.8;
+    }
+    50% {
+      transform: translateY(6px);
+      opacity: 1;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bubble,
+    .scroll-hint-inner,
+    .diamond-frame,
+    .diamond-echo,
+    .sparkles::before,
+    .sparkles::after {
+      animation: none;
+    }
+
+    .diamond-echo {
+      opacity: 0.4;
+    }
+
+    .sparkles {
+      display: none;
+    }
+  }
+</style>

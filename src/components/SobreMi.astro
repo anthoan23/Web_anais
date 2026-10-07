@@ -1,0 +1,122 @@
+---
+import { SITE } from "../data/site";
+
+const highlights = [
+  {
+    icon: "fa-solid fa-shield-heart",
+    title: "Protección Familiar",
+    text: "Planes diseñados para resguardar la salud y el patrimonio familiar.",
+  },
+  {
+    icon: "fa-solid fa-hand-holding-hand",
+    title: "Acompañamiento Directo",
+    text: "Trato cercano sin intermediarios ni complicaciones.",
+  },
+];
+
+const reasons = [
+  {
+    icon: "fa-solid fa-magnifying-glass-chart",
+    title: "Análisis de Necesidades Real",
+    text: "Evaluamos exactamente qué coberturas necesitas sin sobrecostos innecesarios.",
+  },
+  {
+    icon: "fa-solid fa-scale-balanced",
+    title: "Comparativa Transparente",
+    text: "Revisamos las mejores opciones y condiciones de aseguradoras reconocidas.",
+  },
+  {
+    icon: "fa-solid fa-headset",
+    title: "Respuesta en Siniestros",
+    text: "Orientación inmediata durante reembolsos, cartas avales y emergencias.",
+  },
+];
+---
+
+<section id="sobre-mi" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 gap-y-14 lg:grid-cols-12 lg:gap-x-12 items-center">
+      <!-- Retrato: card con gradiente azul, imagen al ras -->
+      <div class="lg:col-span-4 flex justify-center lg:justify-start items-center">
+        <div
+          class="figure-card w-52 sm:w-60 lg:w-full lg:max-w-[19rem] rounded-3xl border-2 border-white shadow-2xl shadow-brand-900/40 overflow-hidden bg-gradient-to-br from-brand-100 via-white to-brand-200 flex"
+        >
+          <img
+            src="/anahis-sobremi.png"
+            alt="Anahís Filomena Prieto Romero, asesora de seguros, de blazer y sonriendo"
+            class="block w-full h-auto object-cover object-bottom"
+            width="303"
+            height="538"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </div>
+
+      <div class="lg:col-span-8">
+        <div
+          class="inline-block px-3 py-1 rounded-full bg-brand-50 text-brand-800 font-semibold text-xs uppercase tracking-wider"
+        >
+          Tranquilidad &amp; Compromiso
+        </div>
+        <h2 class="mt-4 font-heading text-3xl sm:text-4xl font-bold text-slate-900 leading-tight">
+          Tu bienestar y el de tu familia son mi mayor prioridad
+        </h2>
+        <p class="mt-5 text-slate-600 leading-relaxed max-w-3xl">
+          Como asesora de seguros especializada, mi objetivo es guiarte de forma totalmente clara,
+          sincera y transparente para elegir las mejores opciones de protección ajustadas a tus
+          posibilidades.
+        </p>
+        <p class="mt-4 text-slate-600 leading-relaxed max-w-3xl">
+          Ubicada en <strong class="font-semibold text-brand-900">Barquisimeto (Tamaca, Estado Lara)</strong>,
+          brindo asesoría personalizada tanto a familias como a emprendedores y empresas en todo el
+          país. No solo gestiono tu póliza; estoy a tu lado en todo momento para responder dudas y
+          respaldarte ante cualquier siniestro o emergencia.
+        </p>
+
+        <h3 class="mt-10 font-heading text-2xl font-bold text-brand-900">
+          ¿Por qué elegir la asesoría con {SITE.shortName}?
+        </h3>
+
+        <div class="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-4">
+          {
+            reasons.map((reason) => (
+              <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-start gap-3">
+                <div class="w-10 h-10 rounded-lg bg-brand-600 text-white flex items-center justify-center shrink-0">
+                  <i class={reason.icon} />
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-900 text-sm">{reason.title}</h4>
+                  <p class="text-xs text-slate-500 mt-0.5">{reason.text}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {
+            highlights.map((item) => (
+              <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-start gap-3">
+                <div class="w-10 h-10 rounded-lg bg-brand-600 text-white flex items-center justify-center shrink-0">
+                  <i class={item.icon} />
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-900 text-sm">{item.title}</h4>
+                  <p class="text-xs text-slate-500 mt-0.5">{item.text}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+
+        <div
+          class="mt-8 pt-4 border-t border-slate-200 flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between text-xs text-brand-800 font-medium"
+        >
+          <span><i class="fa-solid fa-house-user mr-1"></i> Atención presencial en Lara</span>
+          <span><i class="fa-solid fa-globe mr-1"></i> Asesoría Digital en todo el país</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

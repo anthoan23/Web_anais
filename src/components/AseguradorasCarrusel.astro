@@ -1,0 +1,124 @@
+---
+const logos = [
+  { file: "images1-removebg-preview.png", name: "Seguros Qualitas" },
+  { file: "imagen7-removebg-preview.png", name: "Latina Seguros", big: true, xbig: true },
+  { file: "imagen10-removebg-preview.png", name: "Mercantil Seguros" },
+  { file: "imagen9-removebg-preview.png", name: "MAPFRE Seguros" },
+  { file: "imagen11-removebg-preview.png", name: "Seguros Venezuela" },
+  { file: "images2-removebg-preview.png", name: "Atrio Seguros", big: true },
+  { file: "imagen8-removebg-preview.png", name: "Seguros Constitución", big: true },
+  { file: "imagen4.svg", name: "Seguros Altamira" },
+  { file: "imagen3.svg", name: "Seguros Caracas", big: true },
+  { file: "images6-removebg-preview.png", name: "Seguros Universitas" },
+  { file: "imagen-removebg-preview.png", name: "Proseguros", big: true },
+  { file: "images-removebg-preview.png", name: "Aseguradora aliada", big: true },
+];
+
+const loop = [...logos, ...logos];
+---
+
+<section id="aseguradoras" class="pt-0 pb-20 bg-slate-100" aria-label="Aseguradoras aliadas">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-8">
+    <span class="text-brand-700 font-semibold text-xs uppercase tracking-wider block">
+      Compañías Aliadas
+    </span>
+  </div>
+
+  <div class="marquee" role="list">
+    <div class="marquee-track">
+      {
+        loop.map((logo, i) => (
+          <div
+            class="logo-card"
+            role="listitem"
+            aria-hidden={i >= logos.length ? "true" : undefined}
+          >
+            <img
+              src={`/aseguradoras/${logo.file}`}
+              alt={logo.name}
+              title={logo.name}
+              class={logo.xbig ? "logo-big logo-xbig" : logo.big ? "logo-big" : undefined}
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .marquee {
+    overflow: hidden;
+    padding-block: 1.75rem 2.25rem;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+
+  .marquee-track {
+    display: flex;
+    gap: 1.25rem;
+    width: max-content;
+    padding-inline: 0.625rem;
+    animation: desfile 45s linear infinite;
+  }
+
+  .logo-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 13.5rem;
+    height: 7.25rem;
+    background-color: #ffffff;
+    border: 1px solid rgb(226 232 240);
+    border-radius: 1.25rem;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+    transition:
+      box-shadow 0.3s ease,
+      border-color 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .logo-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(37, 99, 235, 0.75);
+    box-shadow:
+      0 0 16px rgba(37, 99, 235, 0.35),
+      0 0 42px rgba(37, 99, 235, 0.22),
+      0 10px 24px rgba(15, 23, 42, 0.12);
+  }
+
+  .logo-card img {
+    height: 3.5rem;
+    width: auto;
+    max-width: 10.5rem;
+    object-fit: contain;
+  }
+
+  .logo-card img.logo-big {
+    height: 6.5rem;
+    max-width: 13rem;
+  }
+
+  .logo-card img.logo-xbig {
+    height: 9rem;
+    max-width: 14rem;
+  }
+
+  @keyframes desfile {
+    to {
+      transform: translateX(calc(-50% - 0.625rem));
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+      animation: none;
+    }
+
+    .logo-card {
+      transform: none;
+    }
+  }
+</style>

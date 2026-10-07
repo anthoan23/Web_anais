@@ -1,0 +1,90 @@
+---
+import FamilyLogo from "./FamilyLogo.astro";
+import LegalModal from "./LegalModal.astro";
+import { SITE, developerWhatsappUrl } from "../data/site";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-brand-950 text-slate-400 py-10 border-t border-brand-900 text-xs">
+  <div
+    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6"
+  >
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 flex items-center justify-center shrink-0">
+        <FamilyLogo />
+      </div>
+      <div>
+        <p class="font-bold text-white text-sm">{SITE.name}</p>
+        <p class="text-slate-400">Asesora de Seguros • Barquisimeto, Lara</p>
+      </div>
+    </div>
+
+    <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center">
+      <p>© {year} {SITE.name}. Todos los derechos reservados.</p>
+      <div class="flex items-center gap-2">
+        <button
+          type="button"
+          data-legal="aviso"
+          class="text-slate-400 hover:text-white underline underline-offset-4 decoration-slate-600 hover:decoration-white transition-colors cursor-pointer"
+        >
+          Aviso Legal
+        </button>
+        <span class="text-slate-600" aria-hidden="true">·</span>
+        <button
+          type="button"
+          data-legal="privacidad"
+          class="text-slate-400 hover:text-white underline underline-offset-4 decoration-slate-600 hover:decoration-white transition-colors cursor-pointer"
+        >
+          Política de Privacidad
+        </button>
+      </div>
+    </div>
+
+    <div class="flex gap-4">
+      <a
+        href={SITE.tiktok.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:text-white transition-colors"
+        aria-label="TikTok oficial"
+      >
+        <i class="fa-brands fa-tiktok text-base"></i>
+      </a>
+      <a
+        href={SITE.instagram.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:text-white transition-colors"
+        aria-label="Instagram oficial"
+      >
+        <i class="fa-brands fa-instagram text-base"></i>
+      </a>
+      <a
+        href={`mailto:${SITE.emails[0]}`}
+        class="hover:text-white transition-colors"
+        aria-label="Correo electrónico"
+      >
+        <i class="fa-solid fa-envelope text-base"></i>
+      </a>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pt-5 border-t border-brand-900/60 text-center">
+    <p class="text-[11px] leading-relaxed text-slate-500">
+      Diseño y desarrollo web por{" "}
+      <span class="text-slate-300 font-semibold tracking-wide">Gocolin</span> ·
+      Responsable técnico:{" "}
+      <a
+        href={developerWhatsappUrl()}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-slate-300 hover:text-white font-semibold underline underline-offset-4 decoration-slate-600 hover:decoration-white transition-colors"
+        title="Contactar al desarrollador por WhatsApp"
+        >{SITE.developer.person}</a
+      >
+    </p>
+  </div>
+
+  <LegalModal />
+</footer>
